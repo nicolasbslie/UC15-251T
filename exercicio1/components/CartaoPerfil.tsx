@@ -2,15 +2,19 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
 
-const CartaoPerfil = () => {
+interface CartaoPerfilProps {
+  imagem: string,
+  nome: string,
+  bio: string
+}
+
+const CartaoPerfil = ({imagem, nome, bio}: CartaoPerfilProps) => {
   return (
     <SafeAreaView style={styles.container}>
         <View style={styles.card}>
-            <Image source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgK3p8jtKmeo9Lg6wXThSTBpCJu-6EulWCAmyxb5OjdRJ6NtuD63CEMYr8&s=10',}} style={styles.imagem} />
-            { 'Texto com nome' }
-            <Text style={styles.nome}>Fábio Fabão</Text>
-            { 'Bio' }
-            <Text style={styles.bio}>Desenvolvedor apaixonado por tecnologia e inovação... E cachoros</Text>
+            <Image source={{uri: imagem,}} style={styles.imagem} />
+            <Text style={styles.nome}> {nome} </Text>
+            <Text style={styles.bio}> {bio} </Text>
             <TouchableOpacity style={styles.botao}>
                 <Text style={styles.textoBotao}>Seguir</Text>
             </TouchableOpacity>
