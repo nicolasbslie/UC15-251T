@@ -5,11 +5,14 @@ import Contador from './components/Contador';
 import Dijuntor from './components/Dijuntor';
 import CampoNome from './components/CampoNome';
 import CampoNumero from './components/CampoNumero';
+import ListaUsuarios from './components/ListaUsuarios';
+import ListaProdutos from './components/ListaProdutos';
+import Busca from './components/Busca';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <CampoNumero/>
+      <Busca/>
     </View>
   );
 }
