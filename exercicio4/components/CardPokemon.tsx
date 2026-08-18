@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, FlatList, Image, Button, StyleSheet, } from 'react-native';
 
-const CardPokemon = () => {
+const CardPokemon = ({navigation}: any) => {
   const [pokemons, setPokemons] = useState<any[]>([]);
   const [pesquisa, setPesquisa] = useState('');
   const [resultado, setResultado] = useState<any[]>([]);
@@ -97,6 +97,11 @@ const CardPokemon = () => {
             Nenhum Pokémon encontrado.
           </Text>
         }
+      />
+
+      <Button
+        title='Voltar'
+        onPress={() => navigation.navigator('Home')}
       />
     </View>
   );
